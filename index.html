@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog box</title>
+
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+            background-image: url("FlipkartVideoBanner_21_11_19_FKS.jpg");
+            background-size: cover;
+        }
+        .overlay{
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color:rgba(0,0,0,0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal{
+
+            background-color: antiquewhite;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            position: relative;
+
+
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .input-box{
+            text-align: center;
+            width: 180px;
+            margin: 10px 0px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 2px solid gray;
+
+        }
+
+        .btn{
+            position:relative;
+            top: 222px;
+            left: 18%;
+            width: 100px;
+            cursor: pointer;
+            background-color:#ff1a1a;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: bold;
+            color:black;
+            
+            
+            
+        }
+
+        .btn-2{
+            width: 130px;
+            padding: 5px;
+            font-size: 14px;
+            margin-top: 10px;
+            border: none;
+            background-color: red;
+            border-radius: 10px;
+            color: antiquewhite;
+        }
+
+        .cancel-btn{
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="btn" onclick="login()"> Login </div>
+    <div class="overlay" id="overlay">
+        <div class="modal" >
+            <img src="./close.png" alt="cancel-btn" class="cancel-btn" onclick="cancel()">
+            <form >
+            <input type="number" placeholder="Enter ID" class="input-box" >
+
+            <input type="password" placeholder="Enter Password"  class="input-box">
+
+            </form>
+
+            <button type="submit" class="btn-2" >Login</button>
+    
+        </div>
+    
+    </div>
+
+
+
+    <script>
+
+      const loginElement = document.getElementById("overlay")
+        function login(){
+            
+            loginElement.style.display = "flex";
+        }
+
+        function cancel(){
+           
+            loginElement.style.display = "none";
+        }
+    </script>
+
+
+</body>
+</html>
